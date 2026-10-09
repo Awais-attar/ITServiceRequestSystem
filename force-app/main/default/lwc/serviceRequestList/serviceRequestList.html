@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="My Service Requests" icon-name="standard:case">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={requests}>
+
+                <template for:each={requests} for:item="request">
+
+                    <div key={request.Id} class="slds-box slds-m-bottom_medium">
+
+                        <p class="slds-text-heading_medium">
+                            {request.Name}
+                        </p>
+
+                        <p class="slds-m-top_small">
+                            <strong>Subject:</strong> {request.Subject__c}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong> {request.Status__c}
+                        </p>
+
+                        <p>
+                            <strong>IT Support Member:</strong>
+                            {request.IT_Support_Member__r.Name}
+                        </p>
+
+                        <p>
+                            <strong>Response / Resolution:</strong>
+                            {request.Response_Resolution__c}
+                        </p>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>
